@@ -1,0 +1,22 @@
+{
+  "name": "my_app",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "engines": {
+    "node": ">=20.11.0 <21.0.0"
+  },
+  "scripts": {
+    "build": "esbuild app/javascript/. --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "daisyui": "^4.9.0"
+  }
+}
