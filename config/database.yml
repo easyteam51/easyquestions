@@ -16,6 +16,6 @@ test:
 
 production:
   <<: *default
-  database: my_app_production
-  username: my_app
-  password: <%= ENV["MY_APP_DATABASE_PASSWORD"] %>
+  database: <%= ENV["RENDER_DB"] %>
+  username: <%= ENV["RENDER_DB_USERNAME"] %>
+  password: <%= ENV["RENDER_DB_PASSWORD"] %>
