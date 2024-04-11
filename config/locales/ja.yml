@@ -1,0 +1,38 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        user:
+          record_invalid: "にエラーがあります。このユーザーは保存できませんでした。"
+    attributes:
+      user:
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード確認"
+    errors:
+      format: "%{attribute} %{message}"
+      messages:
+        record_invalid: "にエラーがあります。このユーザーは保存できませんでした:"
+      models:
+        user:
+          attributes:
+            name:
+               blank: "名前を入力してください"
+            email:
+              blank: "メールアドレスを入力してください"
+            password:
+              blank: "パスワードを入力してください"
+      messages:
+        blank: "を入力してください"
+        record_invalid: "にエラーがあります。このユーザーは保存できませんでした。"
+  errors:
+    attributes:
+      name:
+        blank: "名前を入力してください"
+      email:
+        blank: "メールアドレスを入力してください"
+      password:
+        blank: "パスワードを入力してください"
+    messages:
+      blank: "を入力してください"
