@@ -1,10 +1,22 @@
-<header class="w-full">
-  <nav class="fixed top-0 left-0 right-0 bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+<header class="w-full navbar bg-base-300">
     <div class="flex justify-between items-center w-full">
-      <%= link_to image_tag("https://flowbite.com/docs/images/logo.svg", class: "mr-3 h-6 sm:h-9", alt: "Flowbite Logo"), root_path %>
-      <div class="flex">
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" %>
+      <div class="flex-1 px-2 lg:flex-none">
+        <%= link_to 'RUNTEQUESTION', root_path, class: "text-lg font-bold text-orange-500" %>
+      </div> 
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost rounded-btn">Menu</div>
+          <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            <li>
+              <%= link_to 'マイページ', "#", class: "hover:bg-base-100 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" %>
+            </li>
+            <li>
+              <%= link_to '質問投稿', "#", class: "hover:bg-base-100 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" %>
+            </li>
+            <li>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "hover:bg-base-100 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" %>
+            </li> 
+          </ul>
+        </div>
       </div>
     </div>  
-    </nav>
 </header>
