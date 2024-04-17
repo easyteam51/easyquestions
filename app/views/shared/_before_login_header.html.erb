@@ -1,11 +1,11 @@
-<header class="w-full">
-  <nav class="fixed top-0 left-0 right-0 bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
-    <div class="flex justify-between items-center w-full">
-      <%= link_to image_tag("https://flowbite.com/docs/images/logo.svg", class: "mr-3 h-6 sm:h-9", alt: "Flowbite Logo"), root_path %>
-      <div class="flex">
-        <%= link_to 'ログイン', new_user_session_path, class: "text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" %>
-        <%= link_to '新規作成', new_user_registration_path, class: "text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" %>
-      </div>
+<header class="w-full navbar bg-base-300">
+  <div class="flex items-center w-full">
+    <div class="flex-1 px-2">
+      <%= link_to 'RUNTEQUESTION', root_path, class: "text-lg font-bold text-orange-500" %>
+    </div> 
+    <div class="flex">
+      <%= link_to 'ログイン', new_user_session_path, class: "text-gray-800 font-bold dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" %>
+      <%= link_to '新規作成', new_user_registration_path, class: "text-gray-800 font-bold dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800" %>
     </div>
-  </nav>
+  </div>
 </header>
