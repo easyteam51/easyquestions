@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to:"questions#index"
   resources :questions, only: %i[index new create show edit update destroy] do
-    resources :answers, only: %i[create edit destroy], shallow: true
+    resources :answers, only: %i[create destroy], shallow: true
   end
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # get 'tops/index'

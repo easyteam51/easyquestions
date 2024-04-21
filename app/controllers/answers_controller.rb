@@ -3,8 +3,10 @@ class AnswersController < ApplicationController
     answer = current_user.answers.build(answer_params)
     # binding.pry
     if  answer.save
+      flash[:success] = '投稿に成功しました'
       redirect_to question_path(answer.question), success: t('defaults.flash_messages.created', item: Answer.model_name.human)
     else
+      flash[:danger] = '投稿に失敗しました'
       redirect_to question_path(answer.question), danger: t('defaults.flash_messages.not_created', item: Answer.model_name.human)
     end
   end
