@@ -8,6 +8,9 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1 or /questions/1.json
   def show
+    @question = Question.find(params[:id])
+    @answers = @question.answers || []
+    @answers = @question.answers.includes(:user).order(created_at: :desc)
   end
 
   # GET /questions/new
@@ -25,8 +28,8 @@ class QuestionsController < ApplicationController
     @question = current_user.questions.build(question_params)
 
       if @question.save
-        flash.now[:success] = '投稿に成功しました'
-        redirect_to questions_path
+        flash[:success] = '投稿に成功しました'
+        redirect_to @question
       else
         flash.now[:danger] = '投稿に失敗しました'
         render :new, status: :unprocessable_entity
@@ -35,7 +38,7 @@ class QuestionsController < ApplicationController
 
   # PATCH/PUT /questions/1 or /questions/1.json
   def update
-    @question = current_user.questions.find(params[:id])
+    @question = current_user.question.find(params[:id])
     if @question.update(question_params)
       redirect_to @question, success: '編集に成功しました'
     else
@@ -48,7 +51,7 @@ class QuestionsController < ApplicationController
   def destroy
     question = current_user.questions.find(params[:id])
     @question.destroy!
-    redirect_to questions_path, success: '質問を削除しました'
+    redirect_to questions_path, notice: '質問を削除しました'
   end
 
   private

@@ -1,20 +1,20 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
-  <br>
-<br>
-<br>
-<br>
-<br>
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-    <% end %>
-
-    <%= render @question %>
-
-    <%= link_to "Edit this question", edit_question_path(@question), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to "Destroy this question", question_path(@question), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+<div class="mx-auto md:w-2/3 w-full flex flex-col space-y-5 overflow-auto px-4">
+  <% if notice.present? %>
+    <div class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg" id="notice">
+      <%= notice %>
     </div>
-    <%= link_to "Back to questions", questions_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <% end %>
+
+  <%= render @question %>
+
+  <div class="flex justify-start space-x-4">
+    <%= link_to "Edit question", edit_question_path(@question), class: "rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    <%= button_to "Delete this question", question_path(@question), method: :delete, class: "rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    <%= link_to "Back to questions", questions_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
   </div>
+
+  <%= render 'answers/form', answer: @answer, question: @question %>
+
+  <%= render @answers %>
 </div>
+

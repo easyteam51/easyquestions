@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
+gem "pry-byebug", group: :development
+
 gem "devise", "~> 4.9", ">= 4.9.3"
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails', groups: [:development, :test]
