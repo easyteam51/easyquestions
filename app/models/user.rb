@@ -2,10 +2,11 @@ class User < ApplicationRecord
   validates :name, presence: true
   has_many :sns_credentials, dependent: :destroy
   has_many :questions, dependent: :destroy
+  has_many :answers, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :omniauthable,
-         omniauth_providers: [:google_oauth2, :line]
+    :recoverable, :rememberable, :validatable, :omniauthable,
+    omniauth_providers: [:google_oauth2, :line]
 
   def self.from_omniauth(auth)
     # LINEからのuidを用いてユーザーを検索または作成
@@ -23,5 +24,9 @@ class User < ApplicationRecord
       user.sns_credentials.find_or_create_by(uid: auth.uid, provider: auth.provider)
     end
     user
+  end
+
+  def own?(object)
+    id == object&.user_id
   end
 end

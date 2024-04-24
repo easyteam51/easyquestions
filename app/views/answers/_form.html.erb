@@ -1,0 +1,11 @@
+<%# <%= form_with model: answer, url: question_answers_path(question) do |f| %>
+<%= form_with(model: [@question, @question.answers.build], local: true, class: "contents") do |f| %>
+  <div class="my-5">
+    <%= f.label :content, 'Answer' %>
+    <%= f.text_area :content, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="inline">
+    <%= f.submit "Submit", class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>
