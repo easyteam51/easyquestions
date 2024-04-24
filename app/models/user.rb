@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :sns_credentials, dependent: :destroy
   has_many :questions, dependent: :destroy
   has_many :answers, dependent: :destroy
+  mount_uploader :avatar, UserImageUploader
 
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable, :omniauthable,
