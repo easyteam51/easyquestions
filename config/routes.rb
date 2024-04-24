@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # get 'tops/index'
 
+  get '/terms_of_service', to: 'tops#terms_of_service'
+  get '/privacy_policy', to: 'tops#privacy_policy'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
