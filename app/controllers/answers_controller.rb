@@ -1,7 +1,7 @@
 class AnswersController < ApplicationController
   def create
     answer = current_user.answers.build(answer_params)
-    # binding.pry
+    binding.pry
     if  answer.save
       flash[:success] = '投稿に成功しました'
       redirect_to question_path(answer.question), success: t('defaults.flash_messages.created', item: Answer.model_name.human)
@@ -20,6 +20,6 @@ class AnswersController < ApplicationController
   private
 
   def answer_params
-    params.require(:answer).permit(:content, :user_id).merge(question_id: params[:question_id])
+    params.require(:answer).permit(:content).merge(question_id: params[:question_id])
   end
 end
