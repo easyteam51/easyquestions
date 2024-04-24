@@ -1,5 +1,5 @@
-<div style="display: flex; justify-content: center; align-items: center; min-height: 50vh;">
-  <div class="col-md-10 col-lg-8 mx-auto" style="font-size: 1rem; padding: 40px;"><br>
+<div style="item: center; min-height: 50vh;">
+  <div class="col-md-10 col-lg-8 w-1/2 mx-auto" style="font-size: 1rem; padding: 40px;"><br>
     <h2>ログイン</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field" style="margin-bottom: 30px;">
@@ -27,6 +27,7 @@
         <% end %>
       <% end %>
     </div>
+    <div class=text-center>
       <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
         <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
       <% end %>
@@ -38,4 +39,5 @@
       <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
         <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
       <% end %>
+    </div>
 </div>
