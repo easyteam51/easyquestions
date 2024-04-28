@@ -1,7 +1,7 @@
 class AnswersController < ApplicationController
-  def new
-    @answer = @question.answers.build
-  end
+  # def new
+  #   @answer = @question.answers.build
+  # end
 
   def create
     answer = current_user.answers.build(answer_params)

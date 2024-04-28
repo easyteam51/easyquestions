@@ -18,6 +18,7 @@ ja:
       signed_in: "正常にログインしました。"
       signed_out: "正常にログアウトしました。"
       already_signed_out: "すでにログアウトしました。"
+      Forgot_your_password?: "パスワードをお忘れですか？"
     unlocks:
       send_instructions: "数分以内にアカウントのロックを解除する方法についての指示が記載されたメールが送信されます。"
       send_paranoid_instructions: "アカウントが存在する場合は、数分以内にロックを解除する方法についての指示が記載されたメールが送信されます。"
@@ -29,4 +30,3 @@ ja:
       expired: "は期限切れです。新しいものをリクエストしてください。"
       not_found: "が見つかりません"
       not_locked: "はロックされていません"
-      
