@@ -1,0 +1,32 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      question: 質問
+      answer: 回答
+    attributes:
+      user:
+        email: メールアドレス
+        last_name: 姓
+        first_name: 名
+        full_name: 氏名
+        avatar: アバター
+        password: パスワード
+        password_confirmation: パスワード確認
+        role: 権限
+      question:
+        title: タイトル
+        body: 本文
+        question_image: サムネイル
+        user: 作成者
+      answer:
+        body: コメント
+  attributes:
+    id: ID
+    created_at: 作成日時
+    updated_at: 更新日時
+  enums:
+    user:
+      role:
+        general: 一般
+        admin: 管理者

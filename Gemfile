@@ -5,6 +5,7 @@ ruby "3.2.2"
 gem "pry-byebug", group: :development
 gem 'rails-i18n', '~> 7.0.0'
 gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 gem "devise", "~> 4.9", ">= 4.9.3"
 gem 'omniauth-google-oauth2'

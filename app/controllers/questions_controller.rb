@@ -29,21 +29,20 @@ class QuestionsController < ApplicationController
     @question = current_user.questions.build(question_params)
 
       if @question.save
-        flash[:success] = '投稿に成功しました'
-        redirect_to @question
+        redirect_to @question, success: t('defaults.flash_messages.created', item: Question.model_name.human)
       else
-        flash.now[:danger] = '投稿に失敗しました'
+        flash.now[:danger] = t('defaults.flash_messages.not_created', item: Question.model_name.human)
         render :new, status: :unprocessable_entity
       end
   end
 
   # PATCH/PUT /questions/1 or /questions/1.json
   def update
-    @question = current_user.question.find(params[:id])
+    @question = current_user.questions.find(params[:id])
     if @question.update(question_params)
-      redirect_to @question, success: '編集に成功しました'
+      redirect_to @question, success: t('defaults.flash_messages.updated', item: Question.model_name.human)
     else
-      flash.now[:danger] = '編集に失敗しました'
+      flash.now[:danger] = t('defaults.flash_messages.not_updated', item: Question.model_name.human)
       render :edit, status: :unprocessable_entity
     end
   end
@@ -52,7 +51,7 @@ class QuestionsController < ApplicationController
   def destroy
     question = current_user.questions.find(params[:id])
     @question.destroy!
-    redirect_to questions_path, notice: '質問を削除しました'
+    redirect_to questions_path, danger: t('defaults.flash_messages.deleted', item: Question.model_name.human)
   end
 
   private
