@@ -1,0 +1,44 @@
+ja:
+  helpers:
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
+    label:
+      email: メールアドレス
+      password: パスワード
+  defaults:
+    create: 作成
+    post: 投稿
+    edit: 編集
+    show: 詳細
+    delete: 削除
+    delete_confirm: 削除しますか？
+    password_reset: パスワードリセット
+    unspecified: 指定なし
+    flash_messages:
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成出来ませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新出来ませんでした"
+      deleted: "%{item}を削除しました"
+      require_login: ログインしてください
+      not_authorized: 権限がありません
+  user_sessions:
+    new:
+      title: ログイン
+      login: ログイン
+      to_register_page: 登録ページへ
+      password_forget: パスワードをお忘れの方はこちら
+  users:
+    new:
+      title: ユーザー登録
+      to_login_page: ログインページへ
+  header:
+    login: ログイン
+    logout: ログアウト
+    question: 質問
+    question_index: 質問一覧
+    create_question: 質問作成
+    bookmark_index: ブックマーク一覧
+    profile: プロフィール

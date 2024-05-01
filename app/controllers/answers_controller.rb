@@ -6,11 +6,10 @@ class AnswersController < ApplicationController
   def create
     answer = current_user.answers.build(answer_params)
     if  answer.save
-      flash[:success] = '投稿に成功しました'
       redirect_to question_path(answer.question), success: t('defaults.flash_messages.created', item: Answer.model_name.human)
     else
-      flash[:danger] = '投稿に失敗しました'
-      redirect_to question_path(answer.question), danger: t('defaults.flash_messages.not_created', item: Answer.model_name.human)
+      flash.now[:danger] = t('defaults.flash_messages.not_created', item: Answer.model_name.human)
+      render :new, status: :unprocessable_entity
     end
   end
 
