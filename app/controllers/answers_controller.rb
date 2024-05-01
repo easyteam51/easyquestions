@@ -1,15 +1,15 @@
 class AnswersController < ApplicationController
-  # def new
-  #   @answer = @question.answers.build
-  # end
+  before_action :authenticate_user!
 
   def create
-    answer = current_user.answers.build(answer_params)
-    if  answer.save
+    @answer = current_user.answers.build(answer_params)
+    if  @answer.save
       redirect_to question_path(answer.question), success: t('defaults.flash_messages.created', item: Answer.model_name.human)
     else
       flash.now[:danger] = t('defaults.flash_messages.not_created', item: Answer.model_name.human)
-      render :new, status: :unprocessable_entity
+      @question = @answer.question
+      @answers = @question.answers.includes(:user).order(created_at: :desc)
+      render 'questions/show', status: :unprocessable_entity
     end
   end
 

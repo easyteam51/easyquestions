@@ -1,6 +1,5 @@
-<%# <%= form_with model: answer, url: question_answers_path(question) do |f| %>
-<%# <%= form_with(model: [@question, @question.answers.build], local: true, class: "contents") do |f| %>
 <%= form_with(model: [@question, @answer], local: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <div class="my-5">
     <%= f.label :content, 'Answer' %>
     <%= f.text_area :content, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>

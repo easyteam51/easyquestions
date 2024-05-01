@@ -21,7 +21,6 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
-    @question = current_user.questions.find(params[:id])
   end
 
   # POST /questions or /questions.json
@@ -38,7 +37,6 @@ class QuestionsController < ApplicationController
 
   # PATCH/PUT /questions/1 or /questions/1.json
   def update
-    @question = current_user.questions.find(params[:id])
     if @question.update(question_params)
       redirect_to @question, success: t('defaults.flash_messages.updated', item: Question.model_name.human)
     else
