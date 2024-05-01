@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   validates :name, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
+
   has_many :sns_credentials, dependent: :destroy
   has_many :questions, dependent: :destroy
   has_many :answers, dependent: :destroy
